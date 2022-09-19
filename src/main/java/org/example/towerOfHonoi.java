@@ -1,12 +1,14 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class towerOfHonoi {
-    ArrayList<LinkedList<node>> honaiGameboard=new ArrayList<>();
-
+HashMap<String,node>pegs=new HashMap<>();
+HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
+   void BeginGame(int disk){
+       CreatePegs(disk);
+   }
 int createDisk(int numberOfDisk){
 
     if(numberOfDisk==0){
@@ -19,25 +21,25 @@ int createDisk(int numberOfDisk){
 }
 
 void loadStartPeg(disk obj){
-    node pointer=honaiGameboard.get(0).get(0);
-    pointer.diskOnpeg.add(obj);
-}
-node CreatePegs(String name){
-    node pegs= new node(name);
-    return pegs;
-}
-void creatingAdjList(node obj){
-//    ArrayList<LinkedList<node>> honaiGameboard=new ArrayList<>();
-    LinkedList<node> currentList= new LinkedList<>();
-    currentList.add(obj);
-    honaiGameboard.add(currentList);
+node current=pegs.get("strt");
+current.diskOnpeg.push(obj);
 
 }
+void CreatePegs(int numbOfDisk){
+    pegs.put("strt",new node("Strt"));
+    pegs.put("des",new node("dest"));
+    pegs.put("A1",new node("A1"));
+    pegs.put("A2",new node("A2"));
+    pegs.put("A3",new node("A3"));
+    pegs.put("A4",new node("A4"));
+    Conncetions.put("strt",new ArrayList<String>(Arrays.asList("dest")));
+    Conncetions.put("dest",new ArrayList<String>(Arrays.asList("A1")));
+    Conncetions.put("A1",new ArrayList<String>(Arrays.asList("dest","A2")));
+    Conncetions.put("A2",new ArrayList<String>(Arrays.asList("A3")));
+    Conncetions.put("A3",new ArrayList<String>(Arrays.asList("A4")));
+    Conncetions.put("A4",new ArrayList<String>(Arrays.asList("A1")));
+    createDisk(numbOfDisk);
 
-void creatEdgeForList(int source, int dest){
-    LinkedList<node> currentList= honaiGameboard.get(source);
-    node destnode=honaiGameboard.get(dest).get(0);
-    currentList.add(destnode);
 }
 
 Boolean canMove(node avaliablePeg){
@@ -50,29 +52,15 @@ Boolean canMove(node avaliablePeg){
 
 
 
-void PlayHonaoiGame(int disks){
-    createDisk(disks);
-    Queue<node> visitedPegs= new LinkedList<>();
-    node startPeg=honaiGameboard.get(0).get(0);
-    visitedPegs.add(startPeg);
+//void PlayHonaoiGame(int disks){
 
-    while(!visitedPegs.isEmpty()){
-
-    }
-
-
-}
+//
+// }
 void printList( ){
-    for(  LinkedList<node> currentList: honaiGameboard){
-        for(node peg:currentList){
-            if(!peg.diskOnpeg.isEmpty()) {
-                System.out.print(peg.pegName + "(" + peg.diskOnpeg.peek().getValue() + ")" + " -> ");
-            }
-            else
-            System.out.print(peg.pegName + "("+")"+" -> ");
-        }
-        System.out.println();
-    }
+
+    node current=pegs.get("strt");
+    current.diskOnpeg.pop();
+    System.out.print(current.pegName+"("+current.diskOnpeg.peek().getValue()+")");
 }
 
 
