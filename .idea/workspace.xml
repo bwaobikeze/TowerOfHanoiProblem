@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87f04483-c7d1-436c-932d-e397c75598ed" name="Changes" comment="chnage the layout of the adlist">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="87f04483-c7d1-436c-932d-e397c75598ed" name="Changes" comment="added the movedisk function">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663547008774</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added the movedisk function">
+      <created>1663983256445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663983256445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,7 +111,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="chnage the layout of the adlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="chnage the layout of the adlist" />
+    <MESSAGE value="added the movedisk function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the movedisk function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
