@@ -80,9 +80,10 @@ void PlayHonaoiGame(int disks){
 
 
 while (!searchForAvailable.isEmpty()) {
+    System.out.println(pegs.get("dest").diskOnpeg.size());
 
     if(pegs.get("dest").diskOnpeg.size()==disks){
-        break;
+        //break;
     }
     //System.out.println("Disk: "+vistednodesStack.peek().getValue());
     if (vistednodesStack.isEmpty()) {
@@ -100,7 +101,7 @@ while (!searchForAvailable.isEmpty()) {
     }
 
         }
-System.out.println("Finish Game");
+//System.out.println("Finish Game");
 
    }
 
@@ -118,12 +119,20 @@ System.out.println("Finish Game");
             }
             else{
                  tempDisk=startPeg.diskOnpeg.pop();
-                 System.out.println(tempDisk.getValue()+" moved form "+startPeg.pegName+" to "+destPointer.pegName);
+                 System.out.println(tempDisk.getValue()+" moved from "+startPeg.pegName+" to "+destPointer.pegName);
                  destPointer.diskOnpeg.push(tempDisk);
 
             }
         }
 
+    }
+    boolean checkIfDesthasLargest(node currentNodeProc,int NumOfDisk){
+       if(currentNodeProc.pegName=="dest"){
+           if(currentNodeProc.diskOnpeg.lastElement().getValue()==NumOfDisk-1){
+               return true;
+           }
+       }
+       return false;
     }
 
     void clearPath(node nodetoClear){
