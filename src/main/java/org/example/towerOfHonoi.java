@@ -95,6 +95,9 @@ while (!searchForAvailable.isEmpty()) {
     else if(canMove(proccesingNode)){
         moveDisk(proccesingNode.pegName);
     }
+    else{
+        clearPath(proccesingNode);
+    }
 
         }
 System.out.println("Finish Game");
@@ -138,8 +141,8 @@ System.out.println("Finish Game");
                         continue;
                     }
                     else if(pegs.get(currentNode.get(j)).diskOnpeg.isEmpty()||pegs.get(goBackto.peek()).diskOnpeg.peek().getValue()<pegs.get(currentNode.get(j)).diskOnpeg.peek().getValue()){
-                        goBackto.pop();
-                        moveDisk(goBackto.pop());
+                        String tempStringNode=goBackto.pop();
+                        moveDisk(tempStringNode);
                     }
                     else{
                         goBackto.push(currentNode.get(j));
