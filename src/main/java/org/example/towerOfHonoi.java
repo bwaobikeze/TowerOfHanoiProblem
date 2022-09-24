@@ -80,6 +80,7 @@ void PlayHonaoiGame(int disks){
 
 
 while (!searchForAvailable.isEmpty()) {
+
     if(pegs.get("dest").diskOnpeg.size()==disks){
         break;
     }
@@ -119,6 +120,34 @@ System.out.println("Finish Game");
 
             }
         }
+
+    }
+
+    void clearPath(node nodetoClear){
+       ArrayList<String>currentNode=new ArrayList<>();
+       currentNode=Conncetions.get(nodetoClear.pegName);
+       Stack<String>goBackto=new Stack<>();
+       for(int i =0; i<currentNode.size();i++){
+           goBackto.push(currentNode.get(i));
+       }
+
+       while (!goBackto.isEmpty()){
+           currentNode=Conncetions.get(goBackto.peek());
+           for(int j =0; j<currentNode.size();j++){
+                    if(goBackto.contains(currentNode.get(j))){
+                        continue;
+                    }
+                    else if(pegs.get(currentNode.get(j)).diskOnpeg.isEmpty()||pegs.get(goBackto.peek()).diskOnpeg.peek().getValue()<pegs.get(currentNode.get(j)).diskOnpeg.peek().getValue()){
+                        goBackto.pop();
+                        moveDisk(goBackto.pop());
+                    }
+                    else{
+                        goBackto.push(currentNode.get(j));
+                    }
+           }
+       }
+
+
 
     }
 void printList( ){
