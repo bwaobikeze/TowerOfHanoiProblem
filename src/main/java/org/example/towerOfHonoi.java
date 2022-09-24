@@ -9,15 +9,37 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
    void BeginGame(int disk){
        CreatePegs(disk);
    }
-int createDisk(int numberOfDisk){
 
-    if(numberOfDisk==0){
-        return 0;
+    void CreatePegs(int numbOfDisk){
+        pegs.put("strt",new node("strt"));
+        pegs.put("dest",new node("dest"));
+        pegs.put("A1",new node("A1"));
+        pegs.put("A2",new node("A2"));
+        pegs.put("A3",new node("A3"));
+        pegs.put("A4",new node("A4"));
+        Conncetions.put("strt",new ArrayList<String>(Arrays.asList("dest")));
+        Conncetions.put("dest",new ArrayList<String>(Arrays.asList("A1")));
+        Conncetions.put("A1",new ArrayList<String>(Arrays.asList("dest","A2")));
+        Conncetions.put("A2",new ArrayList<String>(Arrays.asList("A3")));
+        Conncetions.put("A3",new ArrayList<String>(Arrays.asList("A4")));
+        Conncetions.put("A4",new ArrayList<String>(Arrays.asList("A1")));
+        createDisk(numbOfDisk);
+
     }
-    else
-    loadStartPeg(new disk(numberOfDisk));
+void createDisk(int numberOfDisk){
+//
+//    if(numberOfDisk==0){
+//        return 0;
+//    }
+//    else
+//    loadStartPeg(new disk(numberOfDisk));
+//
+//    return createDisk(numberOfDisk-1);
+    for(int i=numberOfDisk-1; i>=0;i--){
+        loadStartPeg(new disk(i));
+    }
+    //PlayHonaoiGame(numberOfDisk);
 
-    return createDisk(numberOfDisk-1);
 }
 
 void loadStartPeg(disk obj){
@@ -25,42 +47,101 @@ node current=pegs.get("strt");
 current.diskOnpeg.push(obj);
 
 }
-void CreatePegs(int numbOfDisk){
-    pegs.put("strt",new node("Strt"));
-    pegs.put("des",new node("dest"));
-    pegs.put("A1",new node("A1"));
-    pegs.put("A2",new node("A2"));
-    pegs.put("A3",new node("A3"));
-    pegs.put("A4",new node("A4"));
-    Conncetions.put("strt",new ArrayList<String>(Arrays.asList("dest")));
-    Conncetions.put("dest",new ArrayList<String>(Arrays.asList("A1")));
-    Conncetions.put("A1",new ArrayList<String>(Arrays.asList("dest","A2")));
-    Conncetions.put("A2",new ArrayList<String>(Arrays.asList("A3")));
-    Conncetions.put("A3",new ArrayList<String>(Arrays.asList("A4")));
-    Conncetions.put("A4",new ArrayList<String>(Arrays.asList("A1")));
-    createDisk(numbOfDisk);
 
-}
 
-Boolean canMove(node avaliablePeg){
-    if (avaliablePeg.diskOnpeg.isEmpty()){
-        return true;
+
+
+
+    boolean canMove(node avaliablePeg){
+        ArrayList<String>current=Conncetions.get(avaliablePeg.pegName);
+        //System.out.print(current);
+    for(int i=0; i < current.size();i++){
+        if(current.get(i)=="dest"){
+            if(pegs.get(current.get(i)).diskOnpeg.isEmpty()||pegs.get(current.get(i)).diskOnpeg.peek().getValue()>avaliablePeg.diskOnpeg.peek().getValue())
+                return true;
+        }
+       else if(pegs.get(current.get(i)).diskOnpeg.isEmpty()||pegs.get(current.get(i)).diskOnpeg.peek().getValue()>avaliablePeg.diskOnpeg.peek().getValue()){
+           return true;
+       }
     }
-    else
-        return false;
-}
+return false;
+    }
 
 
 
-//void PlayHonaoiGame(int disks){
+void PlayHonaoiGame(int disks){
 
-//
-// }
+    ArrayList<String>current=new ArrayList<>();
+    Iterator connectIt= current.iterator();
+//       int originalNumOfDisks=disks;
+       Stack<disk>vistednodesStack=new Stack<>();
+       Queue<node>searchForAvailable=new ArrayDeque<>();
+       searchForAvailable.add(pegs.get("strt"));
+       node proccesingNode=searchForAvailable.peek();
+       vistednodesStack=proccesingNode.diskOnpeg;
+            //current=Conncetions.get("strt");
+
+
+while (!searchForAvailable.isEmpty()) {
+    //System.out.println("Disk: "+vistednodesStack.peek().getValue());
+    if (vistednodesStack.isEmpty()) {
+        //current = Conncetions.get(proccesingNode.pegName);
+        while (connectIt.hasNext()) {
+            searchForAvailable.add(pegs.get(connectIt.next()));
+        }
+        searchForAvailable.poll();
+    }
+
+
+
+        }
+
+   }
+
+
+//void clearPath()
+    void moveDisk(String start){
+        node destPointer;
+       disk tempDisk;
+       ArrayList<String> currentConnectionPointer=Conncetions.get(start);
+       node startPeg=pegs.get(start);
+        for(int i=0; i<currentConnectionPointer.size();i++){
+             destPointer=pegs.get(currentConnectionPointer.get(i));
+            if(startPeg.diskOnpeg.isEmpty()){
+                return;
+            }
+            else{
+                 tempDisk=startPeg.diskOnpeg.pop();
+                 System.out.println(tempDisk.getValue()+" moved form "+startPeg.pegName+" to "+destPointer.pegName);
+                 destPointer.diskOnpeg.push(tempDisk);
+
+            }
+        }
+
+    }
 void printList( ){
+    moveDisk("strt");
+    moveDisk("strt");
 
-    node current=pegs.get("strt");
-    current.diskOnpeg.pop();
-    System.out.print(current.pegName+"("+current.diskOnpeg.peek().getValue()+")");
+//    node current=pegs.get("strt");
+//    System.out.println(current.diskOnpeg.peek().getValue());
+//    System.out.println(current.diskOnpeg.size());
+//    System.out.println("==============================");
+//    current.diskOnpeg.pop();
+//    System.out.println("First Pop");
+//    System.out.println(current.diskOnpeg.peek().getValue());
+//    System.out.println(current.diskOnpeg.size());
+//    current.diskOnpeg.pop();
+    //System.out.println(current.diskOnpeg.peek().getValue());
+
+//    current.diskOnpeg.pop();
+//    if(current.diskOnpeg.isEmpty()){
+//        return;
+//    }
+//    else {
+//        current.diskOnpeg.pop();
+//        System.out.print(current.pegName + "(" + current.diskOnpeg.peek().getValue() + ")");
+//    }
 }
 
 
