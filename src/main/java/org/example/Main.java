@@ -5,7 +5,7 @@ public class Main {
         //System.out.println("Hello world!");
         towerOfHonoi startgame=new towerOfHonoi();
 
-        startgame.BeginGame(2);
+        startgame.BeginGame(6);
         //startgame.printList();
     }
 }

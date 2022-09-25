@@ -69,8 +69,6 @@ current.diskOnpeg.push(obj);
 void PlayHonaoiGame(int disks){
 
     ArrayList<String>current=new ArrayList<>();
-    Iterator connectIt= current.iterator();
-//       int originalNumOfDisks=disks;
        Stack<disk>vistednodesStack=new Stack<>();
        Queue<node>searchForAvailable=new ArrayDeque<>();
        searchForAvailable.add(pegs.get("strt"));
@@ -80,21 +78,26 @@ void PlayHonaoiGame(int disks){
 
 
 while (!searchForAvailable.isEmpty()) {
-    System.out.println(pegs.get("dest").diskOnpeg.size());
+    //System.out.println(pegs.get("dest").diskOnpeg.size());
 
     if(pegs.get("dest").diskOnpeg.size()==disks){
-        //break;
+        break;
     }
     //System.out.println("Disk: "+vistednodesStack.peek().getValue());
     if (vistednodesStack.isEmpty()) {
-        //current = Conncetions.get(proccesingNode.pegName);
-        while (connectIt.hasNext()) {
-            searchForAvailable.add(pegs.get(connectIt.next()));
-        }
+        //System.out.println("Starting stack is empty");
+        searchForAvailable.addAll(changefrontOfQueue(proccesingNode));
+        //break;
         searchForAvailable.poll();
+        proccesingNode=searchForAvailable.peek();
+        vistednodesStack=proccesingNode.diskOnpeg;
+
+        //System.out.println(searchForAvailable.peek().diskOnpeg.peek().getValue());
+
     }
     else if(canMove(proccesingNode)){
         moveDisk(proccesingNode.pegName);
+        //System.out.println("Starting stack is empty");
     }
     else{
         clearPath(proccesingNode);
@@ -134,7 +137,15 @@ while (!searchForAvailable.isEmpty()) {
        }
        return false;
     }
+ArrayList changefrontOfQueue(node addItsconnection){
+       ArrayList<node>currentProcesdsingNodeConnect=new ArrayList<>();
+       ArrayList<String>currentConnectList=new ArrayList<>();
+    currentConnectList=Conncetions.get(addItsconnection.pegName);
+    for(String node:currentConnectList)
+       currentProcesdsingNodeConnect.add(pegs.get(node));
 
+    return currentProcesdsingNodeConnect;
+}
     void clearPath(node nodetoClear){
        ArrayList<String>currentNode=new ArrayList<>();
        currentNode=Conncetions.get(nodetoClear.pegName);
