@@ -7,7 +7,12 @@
     <list default="true" id="87f04483-c7d1-436c-932d-e397c75598ed" name="Changes" comment="added the movedisk function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TowerOfHonoi.java" afterDir="false" />
+    </list>
+    <list id="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" name="Changes by uboh" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/disk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/disk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TowerOfHonoi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +34,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/org/example/TowerOfHonoi.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="2" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="5" end1="11" start2="4" end2="58" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="12" end1="13" start2="59" end2="73" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="19" end1="27" start2="79" end2="86" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="28" end1="43" start2="87" end2="95" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="44" end1="52" start2="96" end2="100" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="53" end1="54" start2="101" end2="102" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="55" end1="56" start2="103" end2="104" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="58" end1="59" start2="106" end2="107" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="61" end1="62" start2="109" end2="109" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="65" end1="66" start2="112" end2="112" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="67" end1="67" start2="113" end2="120" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="68" end1="72" start2="121" end2="122" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="75" end1="76" start2="125" end2="127" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="79" end1="105" start2="130" end2="148" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="106" end1="108" start2="149" end2="150" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="110" end1="112" start2="152" end2="154" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="115" end1="116" start2="157" end2="158" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="119" end1="120" start2="161" end2="162" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="123" end1="124" start2="165" end2="166" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="125" end1="127" start2="167" end2="168" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="129" end1="130" start2="170" end2="170" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="131" end1="131" start2="171" end2="173" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="133" end1="134" start2="175" end2="176" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="139" end1="145" start2="181" end2="188" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="146" end1="148" start2="189" end2="193" changelist="87f04483-c7d1-436c-932d-e397c75598ed" />
+        <range start1="150" end1="151" start2="195" end2="196" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="157" end1="158" start2="202" end2="203" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="162" end1="163" start2="207" end2="208" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="175" end1="189" start2="220" end2="234" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+        <range start1="190" end1="201" start2="235" end2="244" changelist="5ac2d5a0-6b1e-4a6f-bbb3-436196bdfbf0" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2EkWnYAE3l5EhOTrBKgw8sJdKMR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -38,15 +83,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/HanoiGame&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "S:/HanoiGame"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="HanoiGame.main" />
       <extension name="coverage">
@@ -61,7 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.org.example.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664004019516</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added the movedisk function">
+      <created>1664094842788</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664094842788</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,16 +208,21 @@
           <option name="timeStamp" value="8" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/TowerOfHonoi.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/towerOfHonoi.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/TowerOfHonoi.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="vistednodesStack" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

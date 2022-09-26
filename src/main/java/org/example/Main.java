@@ -2,10 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        //System.out.println("Hello world!");
-        towerOfHonoi startgame=new towerOfHonoi();
-
-        startgame.BeginGame(6);
-        //startgame.printList();
+        TowerOfHonoi myTowerGame = new TowerOfHonoi(5);
+        myTowerGame.startGame();
     }
 }
