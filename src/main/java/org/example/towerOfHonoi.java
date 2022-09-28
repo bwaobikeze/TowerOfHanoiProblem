@@ -9,7 +9,11 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
     void BeginGame(int disk){
        CreatePegs(disk);
    }
-
+    /*
+    *CreatePegs(int numbOfDisk)
+    * Takes in an int parameter of number of disks
+    * this function just initializing my representation Of
+    * */
     void CreatePegs(int numbOfDisk){
         pegs.put("strt",new node("strt"));
         pegs.put("dest",new node("dest"));
@@ -26,6 +30,12 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
         createDisk(numbOfDisk);
 
     }
+    /*
+createDisk(int numberOfDisk)
+take in a numberOfDisk parameter which is passed in through the CreatingList function and iterates depending on the number of disks passed in and creates new disk objects and as it creates these new disk objects it will be passing it to
+loadingDisks() function after  its done with the iteration it calls the Hanoi game
+*
+* */
         void createDisk(int numberOfDisk){
 
     for(int i=numberOfDisk-1; i>=0;i--){
@@ -34,15 +44,27 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
         PlayHonaoiGame(numberOfDisk);
 
 }
-
+    /*
+loadStartPeg(disk obj)
+this function takes in A total number of disks as a parameter,
+this function just loads or push the disks into the starting nodes
+Stack
+*
+* */
         void loadStartPeg(disk obj){
         node current=pegs.get("strt");
         current.diskOnpeg.push(obj);
         }
 
 
-
-
+    /*
+ canMove(node avaliablePeg)
+this function takes in A total number of disks as a parameter,
+this function checks to see if depending on the node we are on can the disk on the
+top of the stack move
+if it can then it returns true, if it cant returns false
+*
+* */
 
     boolean canMove(node avaliablePeg) {
         ArrayList<String> current = Conncetions.get(avaliablePeg.pegName);
@@ -56,7 +78,12 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
         return false;
     }
 
-
+    /*
+ PlayHonaoiGame()
+this function takes in A total number of disks as a parameter,
+this function is where the central logic loop lies  to perform a execute the right amount of moves
+*
+* */
 
         void PlayHonaoiGame(int disks){
 
@@ -75,7 +102,6 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
                     break;
                 }
 
-    //System.out.println("Disk: "+vistednodesStack.peek().getValue());
                 if (vistednodesStack.isEmpty()||checkIfDesthasLargest(proccesingNode,disks)) {
                         searchForAvailable.addAll(changefrontOfQueue(proccesingNode));
                         searchForAvailable.poll();
@@ -86,7 +112,6 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
                 }
                 else if(canMove(proccesingNode)){
                     moveDisk(proccesingNode.pegName);
-                    //System.out.println("Starting stack is empty");
                 }
                 else{
                     clearPath(proccesingNode);
@@ -98,9 +123,14 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
    }
 
 
+    /*
+ void moveDisk(String start)
+this function takes in a processing node String name,
+this function execute the actual moving of the disk fromm source to destination
+and prints it to console
+*
+* */
 
-
-//void clearPath()
     void moveDisk(String start){
         node destPointer;
        disk tempDisk;
@@ -120,6 +150,13 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
         }
 
     }
+    /*
+checkIfDesthasLargest(node currentNodeProc,int NumOfDisk)
+this function takes in a processing node type, and an int number Of disks
+this function check if the destination node's stack size is equal to the number of total disks
+return true if it is return false if it isnt
+*
+* */
     boolean checkIfDesthasLargest(node currentNodeProc,int NumOfDisk){
        if(currentNodeProc.pegName=="dest"){
            if(currentNodeProc.diskOnpeg.lastElement().getValue()==NumOfDisk-1){
@@ -128,7 +165,13 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
        }
        return false;
     }
-
+/*
+changefrontOfQueue(node addItsconnection)
+this function takes in a processing node type
+Then it grabs its connection from a arraylist of string types and then  gets their node object and adds them to arraylist of node types
+after which it returns A new node type ArrayList
+*
+* */
 
         ArrayList changefrontOfQueue(node addItsconnection){
                ArrayList<node>currentProcesdsingNodeConnect=new ArrayList<>();
@@ -139,7 +182,12 @@ HashMap<String,ArrayList<String>>Conncetions=new HashMap<>();
 
             return currentProcesdsingNodeConnect;
         }
-
+/*
+clearPath(node nodetoClear)
+this function takes in a processing node type and traverses the graph to check if
+there is any available nodes stack to move the current nodes disk to an  availebale peg
+*
+* */
 
     void clearPath(node nodetoClear){
        ArrayList<String>currentNode=new ArrayList<>();
